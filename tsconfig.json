@@ -8,7 +8,8 @@
     "strict": true,
     "target": "es2017",
     "noImplicitAny": false,
-    "noUnusedLocals": false
+    "noUnusedLocals": false,
+    "esModuleInterop": true
   },
   "include": ["src/**/*", "src/commands/*.ts"]
 }
