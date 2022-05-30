@@ -1,15 +1,16 @@
-#!/usr/bin/env node
+#!/usr/bin/env ts-node
 
 import { program } from 'commander';
-import clear from 'clear';
-import chalk from 'chalk';
-import figlet from 'figlet';
 
 program.description('Econverse CLI');
 program.name('econverse');
-program.usage('econverse <command> [options]');
+program.usage('<command> [options]');
 
-clear();
-console.log(
-  chalk.green(figlet.textSync('Econverse CLI', { horizontalLayout: 'full' })),
-);
+console.log('Econverse CLI');
+
+program
+  .command('init')
+  .argument('[accountName]', "VTEX store's account name")
+  .description('Initialize a new project');
+
+program.parse();
