@@ -1,9 +1,10 @@
 import fs from 'fs';
-import path from 'path';
-import { execSync } from 'child_process';
-import replaceKeywordInDirectory from '../../utils/replaceKeywordInDirectory';
 
-const boilerplateRepositoryUrl = `https://github.com/EduardoRodriguesF/econverse-boilerplate.git`;
+import {
+  downloadProjectBoilerplate,
+  replaceKeywordInDirectory,
+  resetGit,
+} from '../../utils';
 
 async function init(accountName: string) {
   if (fs.existsSync(accountName)) {
@@ -11,9 +12,9 @@ async function init(accountName: string) {
     return;
   }
 
-  execSync(`git clone ${boilerplateRepositoryUrl} ${accountName}`);
+  downloadProjectBoilerplate(accountName);
 
-  fs.rmdirSync(path.join(accountName, '.git'), { recursive: true });
+  resetGit(accountName);
 
   replaceKeywordInDirectory(accountName, /STORE_NAME/g, accountName);
 }
