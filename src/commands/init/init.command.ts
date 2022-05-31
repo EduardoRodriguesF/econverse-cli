@@ -5,7 +5,9 @@ function initCommand() {
   program
     .command('init')
     .argument('[accountName]', "VTEX store's account name")
-    .description('Initialize a new project')
+    .description(
+      'Initialize a new storefront project using Econverse Boilerplate',
+    )
     .action(init);
 }
 
