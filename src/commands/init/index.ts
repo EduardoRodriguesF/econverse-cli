@@ -1,3 +1,3 @@
-import init from './init';
+import initCommand from './init.command';
 
-export default init;
+export default initCommand;
