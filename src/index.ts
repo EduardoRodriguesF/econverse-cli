@@ -1,16 +1,17 @@
 #!/usr/bin/env ts-node
 
 import { program } from 'commander';
+import init from './commands/init';
 
-program.description('Econverse CLI');
-program.name('econverse');
-program.usage('<command> [options]');
-
-console.log('Econverse CLI');
+program
+  .name('econverse')
+  .description('Econverse CLI')
+  .usage('<command> [options]');
 
 program
   .command('init')
   .argument('[accountName]', "VTEX store's account name")
-  .description('Initialize a new project');
+  .description('Initialize a new project')
+  .action(init);
 
 program.parse();
