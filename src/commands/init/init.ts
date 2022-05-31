@@ -2,9 +2,10 @@ import fs from 'fs';
 
 import {
   downloadProjectBoilerplate,
-  replaceKeywordInDirectory,
+  replaceFileKeyword,
   resetGit,
 } from '../../utils';
+import forEachFile from '../../utils/forEachFile';
 
 async function init(accountName: string) {
   if (fs.existsSync(accountName)) {
@@ -16,7 +17,9 @@ async function init(accountName: string) {
 
   resetGit(accountName);
 
-  replaceKeywordInDirectory(accountName, /STORE_NAME/g, accountName);
+  forEachFile(accountName, (filePath) =>
+    replaceFileKeyword(filePath, /STORE_NAME/g, accountName),
+  );
 }
 
 export default init;

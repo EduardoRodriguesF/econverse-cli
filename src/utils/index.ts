@@ -1,5 +1,5 @@
 import downloadProjectBoilerplate from './downloadProjectBoilerplate';
-import replaceKeywordInDirectory from './replaceKeywordInDirectory';
+import replaceFileKeyword from './replaceFileKeyword';
 import resetGit from './resetGit';
 
-export { downloadProjectBoilerplate, replaceKeywordInDirectory, resetGit };
+export { downloadProjectBoilerplate, replaceFileKeyword, resetGit };
