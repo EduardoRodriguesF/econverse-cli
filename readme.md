@@ -29,6 +29,6 @@ yarn ts-node src/index.ts todos --id 2
 ## Folder design
 
 I thought about doing each command on it's own file using `/commands/[command].ts`,
-exporting a function rendering it's command and it's action.
+and exporting a function that renders it's command(s) with it's action.
 
 You can see two examples going to `/commands/create.ts` or `/commands/todos.ts`.
