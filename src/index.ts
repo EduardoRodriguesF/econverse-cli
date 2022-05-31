@@ -2,6 +2,8 @@
 
 import { program } from 'commander';
 import init from './commands/init';
+import { createFileCommand } from './commands/create';
+import { createTodosCommand } from './commands/todos';
 
 program
   .name('econverse')
@@ -14,4 +16,13 @@ program
   .description('Initialize a new project')
   .action(init);
 
-program.parse();
+program
+  .name('econverse')
+  .description('Econverse CLI')
+  .usage('econverse <command> [options]')
+  .version('0.0.1');
+
+createFileCommand();
+createTodosCommand();
+
+program.parse(process.argv);
